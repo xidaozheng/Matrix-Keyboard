@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\学习\STC89xx设计矩阵按键 模拟HJ遥控器\Project\FootPrintKey.uvproj
+Project File Date:  07/05/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling lcd.c...
+compiling main.c...
+linking...
+Program Size: data=47.0 xdata=0 code=466
+"FootPrintKey" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling lcd.c...
+compiling main.c...
+linking...
+Program Size: data=47.0 xdata=0 code=466
+creating hex file from "FootPrintKey"...
+"FootPrintKey" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(59): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(60): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(63): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(65): error C202: 'KeyState': undefined identifier
+MAIN.C(67): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(69): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(71): error C202: 'KeyValue': undefined identifier
+MAIN.C(72): error C202: 'KeyValue': undefined identifier
+MAIN.C(73): error C202: 'KeyValue': undefined identifier
+MAIN.C(74): error C202: 'KeyValue': undefined identifier
+MAIN.C(78): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(80): error C202: 'GPIO_KEY': undefined identifier
+MAIN.C(82): error C202: 'KeyValue': undefined identifier
+MAIN.C(83): error C202: 'KeyValue': undefined identifier
+MAIN.C(84): error C202: 'KeyValue': undefined identifier
+MAIN.C(85): error C202: 'KeyValue': undefined identifier
+MAIN.C(88): error C202: 'GPIO_KEY': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?DELAY10MS?MAIN
+Program Size: data=44.0 xdata=0 code=309
+creating hex file from "FootPrintKey"...
+"FootPrintKey" - 0 Error(s), 1 Warning(s).

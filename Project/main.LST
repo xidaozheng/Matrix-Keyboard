@@ -1,0 +1,88 @@
+C51 COMPILER V9.01   MAIN                                                                  07/05/2021 22:15:50 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*******************************************************************************
+   2          注意事项：
+   3          根据自己使用的LCD1602是否带有转接板，如果带有转接板的即为4位，需在LCD.H头文件中
+   4          将宏#define LCD1602_4PINS打开，我们这里使用的LCD1602是8位，所以默认将该宏注释。
+   5          
+   6          单片机与矩阵键盘模块接线说明：
+   7          矩阵按键接线参考矩阵按键实验接线图
+   8          
+   9          实验操作：
+  10          S1-S4：0-3
+  11          S5-S8：4-7
+  12          S9-S12：8-B
+  13          S13-S16：C-F。
+  14          *******************************************************************************/
+  15          
+  16          #include<reg51.h>       
+  17          #include"lcd.h"
+  18          
+  19          
+  20          //用来存放按键状态
+  21          unsigned char PuZh[]=" Pechin Science ";
+  22          unsigned char dat[]="0123456789ABCDEF";
+  23          void Delay10ms();   //延时50us
+  24          void KeyDown();          //检测按键函数
+  25           
+  26          /*******************************************************************************
+  27          * 函 数 名         : main
+  28          * 函数功能                 : 主函数
+  29          * 输    入         : 无
+  30          * 输    出         : 无
+  31          *******************************************************************************/
+  32          void main(void)
+  33          {
+  34   1              unsigned char i;
+  35   1              LcdInit();
+  36   1              for(i=0;i<16;i++)
+  37   1              {
+  38   2      //              LcdWriteCom(0x80);
+  39   2                      LcdWriteData(PuZh[i]);  
+  40   2              }
+  41   1              while(1)
+  42   1              {
+  43   2                      if(0)
+  44   2                      {
+  45   3                              LcdWriteCom(0x80+0x40);
+  46   3                              LcdWriteData(dat[0]);
+  47   3                      }
+  48   2              }                               
+  49   1      }
+  50          
+  51          /*******************************************************************************
+  52          * 函 数 名         : Delay10ms
+  53          * 函数功能                 : 延时函数，延时10ms
+  54          * 输    入         : 无
+  55          * 输    出         : 无
+C51 COMPILER V9.01   MAIN                                                                  07/05/2021 22:15:50 PAGE 2   
+
+  56          *******************************************************************************/
+  57          void Delay10ms(void)   //误差 0us
+  58          {
+  59   1          unsigned char a,b,c;
+  60   1          for(c=1;c>0;c--)
+  61   1              for(b=38;b>0;b--)
+  62   1                  for(a=130;a>0;a--);
+  63   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     40    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     34       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

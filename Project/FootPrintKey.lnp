@@ -1,0 +1,4 @@
+"lcd.obj",
+"main.obj" 
+TO "FootPrintKey" 
+RAMSIZE(256) 
